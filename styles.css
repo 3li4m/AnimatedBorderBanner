@@ -1,0 +1,87 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    /* flex is a CSS shorthand property that sets how a flex item will grow or shrink to fit the space available in its container. */
+    display: flex;
+    /* defines how the browser distributes space between and around content items along the main-axis of a flex container */
+    justify-content: center;
+    /* defines the default behavior for how items are laid out along the cross axis. similarr to a horizontal flexbox layout. 
+    That horizontal flow is the main axis, so align-items is the alignment opposite that, on the vertical axis. */
+    align-items: center;
+    
+    min-height:  100vh;
+    background: #0e1538;
+}
+
+.box-background{
+    position: fixed;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.box-background::before{
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 100px;
+    background: red;
+    animation: animate 4s linear infinite;
+}
+
+.box-background::after{
+    content: '';
+    position: absolute;
+    width: 190px;
+    height: 290px;
+    background: rgba(14,21,56,1);
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.box-background h2{
+    position: relative;
+    color: white;
+    z-index: 10;
+}
+
+
+.glassBackground{
+    position: fixed;
+    margin-left: 25%;
+    justify-content: center;
+    align-items: center;
+}
+.box-glass{
+    
+    position: relative;
+    /*Test Glass Shader*/
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.18);
+    
+    width: 200px;
+    height: 300px;
+
+}
+
+.box-glass h2{
+    position: relative;
+    color: white;
+    z-index: 10;
+    text-align: center;
+    padding-top: 59%;
+    
+}
